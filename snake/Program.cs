@@ -16,6 +16,7 @@ namespace snake
             Point p2 = new Point(1, 3, '#');
             p2.Draw();
 
+            Console.WriteLine("HUI");
             Console.ReadLine();
         }
     }
