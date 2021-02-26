@@ -8,17 +8,15 @@ namespace snake
 {
     class VerticalLine : Figure
     {
-        
-        public VerticalLine(int x, int yup, int ydown, char symbol)
+        public VerticalLine(int yLeft, int yRight, int x, char symbol)
         {
             pList = new List<Point>();
-            for (int y=yup; y != ydown; y++)
+            for (int y = yLeft; y <= yRight; ++y)
             {
-                Point p = new Point(x,y, symbol);
+                Point p = new Point(x, y, symbol);
                 pList.Add(p);
             }
         }
-       
-     
+
     }
 }

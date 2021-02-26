@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace snake
 {
-    class HorizontalLine : Figure
-    {
-        
-        public HorizontalLine(int xleft,int xright,int y,char symbol)
+  
+        class HorizontalLine : Figure
         {
-            pList = new List<Point>();
-           for(int x=xleft;x!=xright;x++)
+            public HorizontalLine(int xLeft, int xRight, int y, char symbol)
             {
-                Point p = new Point(x, y, symbol);
-                pList.Add(p);
+                pList = new List<Point>();
+                for (int x = xLeft; x <= xRight; ++x)
+                {
+                    Point p = new Point(x, y, symbol);
+                    pList.Add(p);
+                }
             }
         }
-      
-    }
+
+   
 }

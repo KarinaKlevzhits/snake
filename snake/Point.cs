@@ -11,55 +11,67 @@ namespace snake
         public int x;
         public int y;
         public char symbol;
+
         public Point()
         {
         }
-        public Point(int _x, int _y, char _symbol)
+
+        public Point(int x, int y, char symbol)
         {
-            x = _x;
-            y = _y;
-            symbol = _symbol;
+            this.x = x;
+            this.y = y;
+            this.symbol = symbol;
         }
+
         public Point(Point p)
         {
             x = p.x;
             y = p.y;
             symbol = p.symbol;
         }
-        public void Move(int offset,Direction direction)
+
+        public void Move(int offset, Direction direction)
         {
-            if(direction == Direction.RIGHT)
+            if (direction == Direction.RIGHT)
             {
                 x = x + offset;
-
             }
-            else if(direction == Direction.LEFT)
+            else if (direction == Direction.LEFT)
             {
                 x = x - offset;
             }
             else if (direction == Direction.UP)
             {
-                y = y + offset;
+                y = y - offset;
             }
             else if (direction == Direction.DOWN)
             {
-                y = y - offset;
+                y = y + offset;
             }
         }
+
+        public bool IsHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
             Console.Write(symbol);
         }
+
         public void Clear()
         {
             symbol = ' ';
             Draw();
         }
+
         public override string ToString()
         {
-            return x + "," + y + "," + symbol;
+            return x + ", " + y + ", " + symbol;
         }
-       
+
     }
+    
 }
